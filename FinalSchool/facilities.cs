@@ -72,58 +72,15 @@ namespace FinalSchool
 
     public class ParkingGarage
     {
-        public bool parkingPass = false;
-
         public void HaveParkingPass()
         {
             Console.Clear();
-
-            if (parkingPass != true)
-            {
-                Console.WriteLine("You don't own a parking pass.");
-                Console.WriteLine("Do you wish to buy a parking pass? Please type y/n to make choice.");
-                Console.WriteLine("Beware that you will return to the menu if you choose not to buy a parking pass.");
-
-                bool retry = false;
-
-                do
-                {
-                    switch (Console.ReadLine())
-                    {
-                        case "y":
-                            UnlockGate();
-                            break;
-                        case "n":
-                            Menu menu = new();
-                            menu.PreMenu();
-                            break;
-                        default:
-                            Console.WriteLine("Not a valid choice.");
-                            retry = true;
-                            break;
-                    }
-                } while (retry != false);
-            }
-
-            else
-            {
-                parkingPass = true;
-                Console.WriteLine("You have a valid parking pass.");
-                Console.WriteLine("Press any key to unlock the gate!");
-                Console.ReadKey();
-                UnlockGate();
-            }
-        }
-
-        public void UnlockGate()
-        {
-            Console.Clear();
+            Console.WriteLine("You have a valid parking pass.");
             Console.WriteLine("The gate opened and you parked your car.");
-            Console.WriteLine("You walk to the enterence. Press any key to enter!");
+            Console.WriteLine("You walk to the school enterence. Press any key to enter!");
             Console.ReadKey();
             Menu menu = new();
             menu.MainMenu();
-            
         }
     }
 
@@ -132,49 +89,11 @@ namespace FinalSchool
         public void BicycleRack()
         {
             Console.Clear();
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("1) Lock bike");
-            Console.WriteLine("2) Unlock bike");
-            Console.WriteLine("3) Return to previous menu");
-
-            bool retry = false;
-
-            do
-            {
-                switch (Console.ReadLine())
-                {
-                    case "1":
-                        LockBicycle();
-                        break;
-                    case "2":
-                        UnlockBicycle();
-                        break;
-                    case "3":
-                        break;
-                    default:
-                        Console.WriteLine("Not a valid choice.");
-                        retry = true;
-                        break;
-                }
-            } while (retry != false);
-        }
-
-        public void LockBicycle()
-        {
-            Console.Clear();
             Console.WriteLine("You locked your bike.");
             Console.WriteLine("Press any key to go inside the school!");
             Console.ReadKey();
             Menu menu = new();
             menu.MainMenu();
-        }
-
-        public void UnlockBicycle()
-        {
-            Console.Clear();
-            Console.WriteLine("You unlocked your bike and went home.");
-            Console.WriteLine("Press any key to exit program!");
-            Console.ReadKey();
         }
     }
 

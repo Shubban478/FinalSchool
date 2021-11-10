@@ -5,15 +5,15 @@ namespace FinalSchool
 {
     public class Humans
     {
-        string fullName;
+        public string FullName { get; set; }
 
-        int age;
+        public int Age { get; set; }
 
-        string streetAddress;
+        public string StreetAddress { get; set; }
 
-        string city;
+        public string City { get; set; }
 
-        string zipcode;
+        public string Zipcode  { get; set; }
     }
 
     public class Staff : Humans
@@ -22,6 +22,7 @@ namespace FinalSchool
 
         public void AttendenceList()
         {
+            Console.Clear();
             Console.WriteLine("All students attending class today:\r\n");
             foreach (var item in students)
             {
@@ -223,7 +224,6 @@ namespace FinalSchool
                     validZip = true;
                 }
             }
-
             return input;
         }
 
