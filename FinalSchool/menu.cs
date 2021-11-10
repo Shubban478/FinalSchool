@@ -46,7 +46,7 @@ namespace FinalSchool
         public void MainText()
         {
             Console.WriteLine("Welcome to school! Are you are student or a teacher?");
-            Console.WriteLine("If you are a student, please register.");
+            Console.WriteLine("If you are a student, please register.\r\n");
             Console.WriteLine("1) Students");
             Console.WriteLine("2) Employees");
             Console.WriteLine("3) Register as student");
@@ -55,6 +55,7 @@ namespace FinalSchool
 
         public void MainMenu()
         {
+            Students menu = new();
             Console.Clear();
             MainText();
 
@@ -65,10 +66,13 @@ namespace FinalSchool
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        StudentMenu();
                         break;
                     case "2":
+                        StaffMenu();
                         break;
                     case "3":
+                        menu.Register();
                         break;
                     case "4":
                         break;
@@ -91,6 +95,9 @@ namespace FinalSchool
 
         public void StudentMenu()
         {
+            Students menu = new();
+            Menu main = new();
+
             Console.Clear();
             StudentText();
 
@@ -101,12 +108,16 @@ namespace FinalSchool
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        menu.AttendClass();
                         break;
                     case "2":
+                        menu.SendHomework();
                         break;
                     case "3":
+                        menu.GetGradedHomework();
                         break;
                     case "4":
+                        main.MainMenu();
                         break;
                     default:
                         Console.WriteLine("Not a valid choice.");
@@ -123,13 +134,17 @@ namespace FinalSchool
             Console.WriteLine("1) Teach class");
             Console.WriteLine("2) Grade homework");
             Console.WriteLine("3) Attendence list");
-            Console.WriteLine("4) Go to breakroom");
-            Console.WriteLine("5) Back to main menu");
+            Console.WriteLine("4) Eat lunch");
+            Console.WriteLine("5) Drink coffee");
+            Console.WriteLine("6) Back to main menu");
 
         }
 
         public void StaffMenu()
         {
+            Staff menu = new();
+            StaffRoom room = new();
+            Menu main = new();
             Console.Clear();
             StaffText();
 
@@ -140,14 +155,22 @@ namespace FinalSchool
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        menu.TeachClass();
                         break;
                     case "2":
+                        menu.GradeHomework();
                         break;
                     case "3":
+                        menu.AttendenceList();
                         break;
                     case "4":
+                        room.HeatFood();
                         break;
                     case "5":
+                        menu.DrinkCoffee();
+                        break;
+                    case "6":
+                        main.MainMenu();
                         break;
                     default:
                         Console.WriteLine("Not a valid choice.");
