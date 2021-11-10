@@ -18,15 +18,15 @@ namespace FinalSchool
 
     public class Staff : Humans
     {
+        public static List<string> students = new();
+
         public void AttendenceList()
         {
-            Students list = new();
-
             Console.WriteLine("All students attending class today:\r\n");
-            foreach (var item in list.students)
-             {
+            foreach (var item in students)
+            {
                     Console.WriteLine(item);
-                }
+            }
 
             Console.ReadKey();
             Menu menu = new();
@@ -66,8 +66,6 @@ namespace FinalSchool
 
     public class Students : Humans
     {
-        public List<string> students = new();
-
         public void AttendClass()
         {
             Classroom classroom = new();
@@ -200,7 +198,6 @@ namespace FinalSchool
                 }
                 else
                 {
-                    students.Add(input);
                     validCity = true;
                 }
             }
@@ -223,7 +220,6 @@ namespace FinalSchool
                 }
                 else
                 {
-                    students.Add(input);
                     validZip = true;
                 }
             }
@@ -234,11 +230,11 @@ namespace FinalSchool
         public void Register()
         {
             Console.Clear();
-            GetValidName();
+            Staff.students.Add(GetValidName());
             GetValidDate();
-            GetValidStreet();
-            GetValidCity();
-            GetValidZip();
+            Staff.students.Add(GetValidStreet());
+            Staff.students.Add(GetValidCity());
+            Staff.students.Add(GetValidZip());
             Console.WriteLine("Great, press any key to return to main menu");
             Console.ReadKey();
             Menu menu = new();
