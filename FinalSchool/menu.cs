@@ -10,30 +10,31 @@ namespace FinalSchool
             Console.WriteLine("1) By car, park in the garage");
             Console.WriteLine("2) By bike, use the bicycle rack");
             Console.WriteLine("3) I walked here, i just want to go inside the school!");
+            Console.WriteLine("4) I think i feel sick, maybe i should just go home...");
         }
 
         public void PreMenu()
         {
-            ParkingGarage carpark = new();
-            BicycleGarage bikepark = new();
-
             Console.Clear();
             PreText();
-
             bool retry = false;
-
             do
             {
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        ParkingGarage carpark = new();
                         carpark.HaveParkingPass();
                         break;
                     case "2":
+                        BicycleGarage bikepark = new();
                         bikepark.BicycleRack();
                         break;
                     case "3":
                         MainMenu();
+                        break;
+                    case "4":
+                        QuitSick();
                         break;
                     default:
                         Console.WriteLine("Not a valid choice.");
@@ -184,8 +185,14 @@ namespace FinalSchool
         public void Quit()
         {
             Console.Clear();
-            Console.WriteLine("Thank you for attending school today! Press any key to exit and see you soon!");
-            Console.WriteLine("PS. Don't forget to do your homework!!");
+            Console.WriteLine("Thank you for attending school today! Hope to see you soon!");
+            Console.ReadKey();
+        }
+
+        public void QuitSick()
+        {
+            Console.Clear();
+            Console.WriteLine("Too bad, hope you feel better soon! See you later!");
             Console.ReadKey();
         }
     }
