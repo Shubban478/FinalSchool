@@ -119,16 +119,15 @@ namespace FinalSchool
             Console.ReadKey();
         }
 
-        public void GetValidName()
+        public string GetValidName()
         {
             Console.WriteLine("Let's get you registered!");
             Console.WriteLine("Enter your full name: ");
 
+            string input = Console.ReadLine();
             bool validString = false;
             while (validString != true)
             {
-                string input = Console.ReadLine();
-
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -136,10 +135,11 @@ namespace FinalSchool
                 }
                 else
                 {
-                    students.Add(input);
                     validString = true;
                 }
             }
+
+            return input;
         }
 
         public void GetValidDate()
@@ -163,15 +163,14 @@ namespace FinalSchool
             }
         }
 
-        public void GetValidStreet()
+        public string GetValidStreet()
         {
             Console.WriteLine("Alright! Thank you for your information. Almost finished! Enter your streetname: ");
 
+            string input = Console.ReadLine();
             bool validStreet = false;
             while (validStreet != true)
             {
-                string input = Console.ReadLine();
-
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -179,22 +178,21 @@ namespace FinalSchool
                 }
                 else
                 {
-                    students.Add(input);
                     validStreet = true;
                 }
             }
+
+            return input;
         }
 
-        public void GetValidCity()
+        public string GetValidCity()
         {
             Console.WriteLine("And the name of your city?");
 
+            string input = Console.ReadLine();
             bool validCity = false;
-
             while (validCity != true)
             {
-                string input = Console.ReadLine();
-
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -206,18 +204,18 @@ namespace FinalSchool
                     validCity = true;
                 }
             }
+
+            return input;
         }
 
-        public void GetValidZip()
+        public string GetValidZip()
         {
             Console.WriteLine("Last but not least your zipcode!");
 
+            string input = Console.ReadLine();
             bool validZip = false;
-
             while (validZip != true)
             {
-                string input = Console.ReadLine();
-
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -229,6 +227,8 @@ namespace FinalSchool
                     validZip = true;
                 }
             }
+
+            return input;
         }
 
         public void Register()
