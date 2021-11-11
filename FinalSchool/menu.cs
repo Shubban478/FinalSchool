@@ -76,6 +76,7 @@ namespace FinalSchool
                         menu.Register();
                         break;
                     case "4":
+                        Quit();
                         break;
                     default:
                         Console.WriteLine("Not a valid choice.");
@@ -187,6 +188,14 @@ namespace FinalSchool
             Console.Clear();
             Console.WriteLine("Too bad, hope you feel better soon! See you later!");
             Console.ReadKey();
+        }
+
+        public void Quit()
+        {
+            Console.Clear();
+            Console.WriteLine("Thank you for attending school today!");
+            Console.WriteLine("Don't forget to do your homework before you play videogames tonight! ;)");
+            Console.WriteLine("See you tomorrow again!");
         }
     }
 }
