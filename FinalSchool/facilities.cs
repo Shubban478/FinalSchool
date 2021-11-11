@@ -56,14 +56,14 @@ namespace FinalSchool
                         Console.WriteLine("You read Git Gud In Excel. You are now a master at Excel! Great job!");
                         break;
                     default:
-                        Console.WriteLine("\r\nHmm i can't find this book. Maybe there is another book i can read?");
+                        Console.WriteLine("Hmm i can't find this book. Maybe there is another book i can read?");
                         retry = true;
                         break;
                 }
 
             } while (retry != false);
 
-            Console.WriteLine("\r\nYour brain hurts and you don't feel like reading anymore.");
+            Console.WriteLine("Your brain hurts and you don't feel like reading anymore.");
             Console.ReadKey();
             Students menu = new();
             menu.AttendClass();
@@ -75,7 +75,7 @@ namespace FinalSchool
         public void HaveParkingPass()
         {
             Console.Clear();
-            Console.WriteLine("You have a valid parking pass.");
+            Console.WriteLine("The school has provided you with a parking pass.");
             Console.WriteLine("The gate opened and you parked your car.");
             Console.WriteLine("You walk to the school enterence. Press any key to enter!");
             Console.ReadKey();

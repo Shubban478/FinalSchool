@@ -6,7 +6,7 @@ namespace FinalSchool
         public void PreText()
         {
             Console.WriteLine("You have arrived at school. How did you get here?");
-            Console.WriteLine("Please choose the alternative that suits your needs best.");
+            Console.WriteLine("Please choose the alternative that suits your needs best.\r\n");
             Console.WriteLine("1) By car, park in the garage");
             Console.WriteLine("2) By bike, use the bicycle rack");
             Console.WriteLine("3) I walked here, i just want to go inside the school!");
@@ -87,7 +87,7 @@ namespace FinalSchool
 
         public void StudentText()
         {
-            Console.WriteLine("Welcome student, what do you want to do?");
+            Console.WriteLine("Welcome student, what do you want to do?\r\n");
             Console.WriteLine("1) Attend class");
             Console.WriteLine("2) Send homework for grading");
             Console.WriteLine("3) Get graded homework");
@@ -131,7 +131,7 @@ namespace FinalSchool
 
         public void StaffText()
         {
-            Console.WriteLine("Welcome teacher, what do you want to do?");
+            Console.WriteLine("Welcome teacher, what do you want to do?\r\n");
             Console.WriteLine("1) Teach class");
             Console.WriteLine("2) Grade homework");
             Console.WriteLine("3) Attendence list");
