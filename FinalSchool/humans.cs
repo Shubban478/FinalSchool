@@ -127,10 +127,12 @@ namespace FinalSchool
             Console.WriteLine("Let's get you registered!");
             Console.WriteLine("Enter your full name: ");
 
-            string input = Console.ReadLine();
+            string input = "";
             bool validString = false;
             while (validString != true)
             {
+                input = Console.ReadLine();
+
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -170,10 +172,12 @@ namespace FinalSchool
         {
             Console.WriteLine("Alright! Thank you for your information. Almost finished! Enter your streetname: ");
 
-            string input = Console.ReadLine();
+            string input = "";
             bool validStreet = false;
             while (validStreet != true)
             {
+                input = Console.ReadLine();
+
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -192,10 +196,12 @@ namespace FinalSchool
         {
             Console.WriteLine("And the name of your city?");
 
-            string input = Console.ReadLine();
+            string input = "";
             bool validCity = false;
             while (validCity != true)
             {
+                input = Console.ReadLine();
+
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
@@ -214,10 +220,12 @@ namespace FinalSchool
         {
             Console.WriteLine("Last but not least your zipcode!");
 
-            string input = Console.ReadLine();
+            string input = "";
             bool validZip = false;
             while (validZip != true)
             {
+                input = Console.ReadLine();
+
                 if (String.IsNullOrEmpty(input))
                 {
                     Console.WriteLine("Not a valid input.");
