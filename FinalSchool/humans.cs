@@ -92,7 +92,7 @@ namespace FinalSchool
                         canteen.HaveLunch();
                         break;
                     case "3":
-                        menu.MainMenu();
+                        menu.StudentMenu();
                         break;
                     default:
                         Console.WriteLine("\r\nNot a valid choice.");
