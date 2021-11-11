@@ -26,7 +26,7 @@ namespace FinalSchool
                 Console.WriteLine(book);
             }
 
-            bool retry = false;
+            bool ValidBook = false;
 
             do
             {
@@ -36,32 +36,39 @@ namespace FinalSchool
                 {
                     case "of mouse and men":
                         Console.WriteLine("You read Of Mouse And Men. What a great story!");
+                        ValidBook = true;
                         break;
                     case "harry potter collection":
                         Console.WriteLine("You read Harry Potter Collection. It's very long, so you have to finish it another time.");
+                        ValidBook = true;
                         break;
                     case "the hunger games":
                         Console.WriteLine("You read The Hunger Games. I wonder how it will end!");
+                        ValidBook = true;
                         break;
                     case "divergent":
                         Console.WriteLine("You read Divirgent. Though you did not like it very much and did not finish it.");
+                        ValidBook = true;
                         break;
                     case "basic programing vol. 1":
                         Console.WriteLine("You read Basic Programing Vol. 1. You learned a lot of new things! Nice!");
+                        ValidBook = true;
                         break;
                     case "basic programing vol. 2":
                         Console.WriteLine("You read Basic Programing Vol. 2. It was too complex for you. Maybe you should read vol. 1.");
+                        ValidBook = true;
                         break;
                     case "git gud in excel":
                         Console.WriteLine("You read Git Gud In Excel. You are now a master at Excel! Great job!");
+                        ValidBook = true;
                         break;
                     default:
                         Console.WriteLine("Hmm i can't find this book. Maybe there is another book i can read?");
-                        retry = true;
+                        ValidBook = false;
                         break;
                 }
 
-            } while (retry != false);
+            } while (ValidBook != true);
 
             Console.WriteLine("Your brain hurts and you don't feel like reading anymore.");
             Console.ReadKey();
