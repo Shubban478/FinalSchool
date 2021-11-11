@@ -196,6 +196,7 @@ namespace FinalSchool
             Console.WriteLine("Thank you for attending school today!");
             Console.WriteLine("Don't forget to do your homework before you play videogames tonight! ;)");
             Console.WriteLine("See you tomorrow again!");
+            Console.ReadKey();
         }
     }
 }
