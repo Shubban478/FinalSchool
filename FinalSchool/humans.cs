@@ -74,10 +74,10 @@ namespace FinalSchool
             Menu menu = new();
 
             Console.Clear();
-            Console.WriteLine("You attend class. What do you want to do?");
+            Console.WriteLine("You attend class. What do you want to do now?\r\n");
             Console.WriteLine("1) Read a book");
             Console.WriteLine("2) Eat lunch");
-            Console.WriteLine("3) Back to menu\r\n");
+            Console.WriteLine("3) Back to menu");
 
             bool retry = false;
 
@@ -108,6 +108,8 @@ namespace FinalSchool
             Console.WriteLine("You sent your homework. Good job!");
             Console.WriteLine("Press any key to return to menu.");
             Console.ReadKey();
+            Menu menu = new();
+            menu.StudentMenu();
         }
 
         public void GetGradedHomework()
@@ -116,6 +118,8 @@ namespace FinalSchool
             Console.WriteLine("Good job! You got an A!");
             Console.WriteLine("Press any key to return to menu.");
             Console.ReadKey();
+            Menu menu = new();
+            menu.StudentMenu();
         }
 
         public string GetValidName()

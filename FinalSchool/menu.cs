@@ -182,13 +182,6 @@ namespace FinalSchool
             } while (retry != false);
         }
 
-        public void Quit()
-        {
-            Console.Clear();
-            Console.WriteLine("Thank you for attending school today! Hope to see you soon!");
-            Console.ReadKey();
-        }
-
         public void QuitSick()
         {
             Console.Clear();
