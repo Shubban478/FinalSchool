@@ -5,15 +5,15 @@ namespace FinalSchool
 {
     public class Humans
     {
-        public string FullName { get; set; }
+        protected string FullName { get; set; }
 
-        public int Age { get; set; }
+        protected string Age { get; set; }
 
-        public string StreetAddress { get; set; }
+        protected string StreetAddress { get; set; }
 
-        public string City { get; set; }
+        protected string City { get; set; }
 
-        public string Zipcode  { get; set; }
+        protected string Zipcode  { get; set; }
     }
 
     public class Staff : Humans
@@ -125,14 +125,11 @@ namespace FinalSchool
         {
             Console.WriteLine("Let's get you registered!");
             Console.WriteLine("Enter your full name: ");
-
-            string input = "";
             bool validString = false;
             while (validString != true)
             {
-                input = Console.ReadLine();
-
-                if (String.IsNullOrEmpty(input))
+                FullName = Console.ReadLine();
+                if (String.IsNullOrEmpty(FullName))
                 {
                     Console.WriteLine("Not a valid input.");
                     validString = false;
@@ -143,13 +140,12 @@ namespace FinalSchool
                 }
             }
 
-            return input;
+            return FullName;
         }
 
         public string GetValidDate()
         {
-            Console.WriteLine("Welcome to our school! \r\n" + "To continue, enter your date of birth: YYYY-MM-DD");
-            string scn = "";
+            Console.WriteLine("\r\nWelcome to our school! \r\n" + "To continue, enter your date of birth: YYYY-MM-DD");
             bool validDate = false;
 
             while (validDate != true)
@@ -157,56 +153,50 @@ namespace FinalSchool
                 try
                 {
                     DateTime socialSecurityNumber = Convert.ToDateTime(Console.ReadLine());
-                    scn = Convert.ToString(socialSecurityNumber);
+                    Age = Convert.ToString(socialSecurityNumber);
                     validDate = true;
                 }
                 catch
                 {
-                    Console.WriteLine("Not a valid format. Try again");
+                    Console.WriteLine("\r\nNot a valid format. Try again");
                     validDate = false;
                 }
             }
 
-            return scn;
+            return Age;
         }
 
         public string GetValidStreet()
         {
-            Console.WriteLine("Alright! Thank you for your information. Almost finished! Enter your streetname: ");
-
-            string input = "";
+            Console.WriteLine("\r\nAlright! Thank you for your information. Almost finished! Enter your streetname: ");
             bool validStreet = false;
             while (validStreet != true)
             {
-                input = Console.ReadLine();
-
-                if (String.IsNullOrEmpty(input))
-                {
-                    Console.WriteLine("Not a valid input.");
-                    validStreet = false;
-                }
-                else
-                {
-                    validStreet = true;
-                }
+               StreetAddress = Console.ReadLine();
+               if (String.IsNullOrEmpty(StreetAddress))
+               {
+                   Console.WriteLine("\r\nNot a valid input.");
+                   validStreet = false;
+               }
+               else
+               {
+                   validStreet = true;
+               }
             }
 
-            return input;
+            return StreetAddress;
         }
 
         public string GetValidCity()
         {
-            Console.WriteLine("And the name of your city?");
-
-            string input = "";
+            Console.WriteLine("\r\nAnd the name of your city?");
             bool validCity = false;
             while (validCity != true)
             {
-                input = Console.ReadLine();
-
-                if (String.IsNullOrEmpty(input))
+                City = Console.ReadLine();
+                if (String.IsNullOrEmpty(City))
                 {
-                    Console.WriteLine("Not a valid input.");
+                    Console.WriteLine("\r\nNot a valid input.");
                     validCity = false;
                 }
                 else
@@ -215,22 +205,20 @@ namespace FinalSchool
                 }
             }
 
-            return input;
+            return City;
         }
 
         public string GetValidZip()
         {
-            Console.WriteLine("Last but not least your zipcode!");
-
-            string input = "";
+            Console.WriteLine("\r\nLast but not least your zipcode!");
             bool validZip = false;
             while (validZip != true)
             {
-                input = Console.ReadLine();
+                Zipcode = Console.ReadLine();
 
-                if (String.IsNullOrEmpty(input))
+                if (String.IsNullOrEmpty(Zipcode))
                 {
-                    Console.WriteLine("Not a valid input.");
+                    Console.WriteLine("\r\nNot a valid input.");
                     validZip = false;
                 }
                 else
@@ -238,7 +226,7 @@ namespace FinalSchool
                     validZip = true;
                 }
             }
-            return input;
+            return Zipcode;
         }
 
         public void Register()
@@ -248,8 +236,8 @@ namespace FinalSchool
             Staff.students.Add(GetValidDate());
             Staff.students.Add(GetValidStreet());
             Staff.students.Add(GetValidCity());
-            Staff.students.Add(GetValidZip());
-            Console.WriteLine("Great, press any key to return to main menu");
+            Staff.students.Add(GetValidZip() + "\r\n");
+            Console.WriteLine("\r\nGreat, press any key to return to main menu");
             Console.ReadKey();
             Menu menu = new();
             menu.MainMenu();
