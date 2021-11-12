@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace FinalSchool
 {
     public class Menu
@@ -56,10 +57,8 @@ namespace FinalSchool
 
         public void MainMenu()
         {
-            Students menu = new();
             Console.Clear();
             MainText();
-
             bool retry = false;
 
             do
@@ -73,6 +72,7 @@ namespace FinalSchool
                         StaffMenu();
                         break;
                     case "3":
+                        Students menu = new();
                         menu.Register();
                         break;
                     case "4":
@@ -83,6 +83,7 @@ namespace FinalSchool
                         retry = true;
                         break;
                 }
+
             } while (retry != false);
         }
 
@@ -98,8 +99,6 @@ namespace FinalSchool
         public void StudentMenu()
         {
             Students menu = new();
-            Menu main = new();
-
             Console.Clear();
             StudentText();
 
@@ -119,6 +118,7 @@ namespace FinalSchool
                         menu.GetGradedHomework();
                         break;
                     case "4":
+                        Menu main = new();
                         main.MainMenu();
                         break;
                     default:
@@ -145,8 +145,6 @@ namespace FinalSchool
         public void StaffMenu()
         {
             Staff menu = new();
-            StaffRoom room = new();
-            Menu main = new();
             Console.Clear();
             StaffText();
 
@@ -166,12 +164,14 @@ namespace FinalSchool
                         menu.AttendenceList();
                         break;
                     case "4":
+                        StaffRoom room = new();
                         room.HeatFood();
                         break;
                     case "5":
                         menu.DrinkCoffee();
                         break;
                     case "6":
+                        Menu main = new();
                         main.MainMenu();
                         break;
                     default:

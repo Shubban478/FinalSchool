@@ -18,7 +18,7 @@ namespace FinalSchool
 
     public class Staff : Humans
     {
-        public static List<string> students = new();
+        public static readonly List<string> students = new();
 
         public void AttendenceList()
         {
@@ -26,7 +26,7 @@ namespace FinalSchool
             Console.WriteLine("All students attending class today:\r\n");
             foreach (var item in students)
             {
-                    Console.WriteLine(item);
+              Console.WriteLine(item);
             }
 
             Console.ReadKey();
@@ -69,10 +69,6 @@ namespace FinalSchool
     {
         public void AttendClass()
         {
-            Classroom classroom = new();
-            Canteen canteen = new();
-            Menu menu = new();
-
             Console.Clear();
             Console.WriteLine("You attend class. What do you want to do now?\r\n");
             Console.WriteLine("1) Read a book");
@@ -86,12 +82,15 @@ namespace FinalSchool
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        Classroom classroom = new();
                         classroom.Read();
                         break;
                     case "2":
+                        Canteen canteen = new();
                         canteen.HaveLunch();
                         break;
                     case "3":
+                        Menu menu = new();
                         menu.StudentMenu();
                         break;
                     default:
@@ -147,10 +146,10 @@ namespace FinalSchool
             return input;
         }
 
-        public void GetValidDate()
+        public string GetValidDate()
         {
             Console.WriteLine("Welcome to our school! \r\n" + "To continue, enter your date of birth: YYYY-MM-DD");
-
+            string scn = "";
             bool validDate = false;
 
             while (validDate != true)
@@ -158,6 +157,7 @@ namespace FinalSchool
                 try
                 {
                     DateTime socialSecurityNumber = Convert.ToDateTime(Console.ReadLine());
+                    scn = Convert.ToString(socialSecurityNumber);
                     validDate = true;
                 }
                 catch
@@ -166,6 +166,8 @@ namespace FinalSchool
                     validDate = false;
                 }
             }
+
+            return scn;
         }
 
         public string GetValidStreet()
@@ -243,7 +245,7 @@ namespace FinalSchool
         {
             Console.Clear();
             Staff.students.Add(GetValidName());
-            GetValidDate();
+            Staff.students.Add(GetValidDate());
             Staff.students.Add(GetValidStreet());
             Staff.students.Add(GetValidCity());
             Staff.students.Add(GetValidZip());
